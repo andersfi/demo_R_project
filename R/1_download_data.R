@@ -6,7 +6,7 @@
 
 #-----------------------------------------------------------------------
 # Download data from external source. This is best practice for making 
-# your code transportable among different computers. 
+# your code transportable among different computers.. 
 #-----------------------------------------------------------------------
 
 # first create new folder (./data/raw_data) to store the files 
