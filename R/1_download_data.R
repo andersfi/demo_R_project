@@ -1,6 +1,6 @@
 #########################################################################
 #
-# Demo script
+# Demo script - download data
 #
 #########################################################################
 
@@ -35,7 +35,8 @@ temparture_average2 <- temparture_average %>%
          mnt =  str_sub(date, start = 4, end = 5),
          yr =  str_sub(date, start = 7, end = 8)) %>%
   mutate(yr = paste0("20",yr)) %>%
-  mutate(date_iso = paste0(yr,"-",mnt,"-",day))
+  mutate(date_iso = paste0(yr,"-",mnt,"-",day)) %>%
+  mutate(date_iso = ydm(date_iso))
 
 # save daily averages, first make new directory for saving
 dir.create("data/modified", showWarnings = FALSE, recursive = TRUE)
