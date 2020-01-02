@@ -37,6 +37,10 @@ temparture_average2 <- temparture_average %>%
   mutate(yr = paste0("20",yr)) %>%
   mutate(date_iso = paste0(yr,"-",mnt,"-",day))
 
+# save daily averages, first make new directory for saving
+dir.create("data/modified", showWarnings = FALSE, recursive = TRUE)
+write.csv(temparture_average2,"./data/modified/temperatur_daily_avg.csv")
+
 
 
 
