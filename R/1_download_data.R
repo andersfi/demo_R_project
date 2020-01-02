@@ -18,9 +18,24 @@ dir.create("data/raw_data", showWarnings = FALSE, recursive = TRUE)
 URL <- "https://ndownloader.figshare.com/files/20551587"
 download.file(url=URL,destfile="./data/raw_data/temperatur.csv")  
 
-# open file
+# open file and modify something...
 temperature <- read.csv("./data/raw_data/temperatur.csv")
 
+# get averege dailly temp
+library(dplyr)
+temparture_average <- temperature %>% 
+  group_by(date) %>%
+  summarise(daily_avg = mean(temperature_c)) 
+
+# make dates into something readable (ie. iso date format)
+library(lubridate)
+library(stringr)
+temparture_average2 <- temparture_average %>%
+  mutate(day =  str_sub(date, start = 0, end = 2),
+         mnt =  str_sub(date, start = 4, end = 5),
+         yr =  str_sub(date, start = 7, end = 8)) %>%
+  mutate(yr = paste0("20",yr)) %>%
+  mutate(date_iso = paste0(yr,"-",mnt,"-",day))
 
 
 
