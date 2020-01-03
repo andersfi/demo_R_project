@@ -5,6 +5,7 @@
 #########################################################################
 
 # read data
+#
 temp_day_avg <- read.csv("./data/modified/temperatur_daily_avg.csv")
 
 # plot data
