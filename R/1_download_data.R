@@ -10,6 +10,7 @@
 #-----------------------------------------------------------------------
 
 # add some stupid documentaiton 
+# add some more stupid comments
 
 # first create new folder (./data/raw_data) to store the files 
 # locally (cache down the data) - remember to update gitignore folder (add 
