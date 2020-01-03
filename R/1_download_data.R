@@ -9,6 +9,8 @@
 # your code transportable among different computers.. 
 #-----------------------------------------------------------------------
 
+# add some stupid documentaiton 
+
 # first create new folder (./data/raw_data) to store the files 
 # locally (cache down the data) - remember to update gitignore folder (add 
 # the line */data/raw_data to the .gitignore file)
